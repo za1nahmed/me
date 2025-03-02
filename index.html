@@ -56,13 +56,21 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+	    .greeting {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #007BFF;
+	    }
+	
     </style>
 </head>
 <body>
     <header>
         <h1>About Me</h1>
     </header>
-	
+	    <section class="greeting" id="greeting"></section>
+
 	<div class="container">
         <header class="main-info">
         	<h1>Zain Ahmed's Introductions Website</h1>
@@ -122,5 +130,19 @@
 	<p>(03-02-2025)</p>
 </section>
     </script>
+
+// Dynamic greeting based on time of day
+        function getGreeting() {
+            const hour = new Date().getHours();
+            if (hour < 12) {
+                return "Good morning, Zain!";
+            } else if (hour < 18) {
+                return "Good afternoon, Zain!";
+            } else {
+                return "Good evening, Zain!";
+            }
+        }
+        document.getElementById("greeting").innerText = getGreeting();
+
 </body>
 </html>
